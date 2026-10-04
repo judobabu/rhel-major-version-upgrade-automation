@@ -1,0 +1,65 @@
+rhel-major-version-upgrade-automation/
+│
+├── README.md
+│
+├── architecture/
+│   ├── .gitkeep
+│   └── rhel-upgrade-architecture.png
+│
+├── docs/
+│   ├── upgrade-planning-and-workflow.md
+│   ├── upgrade-automation.md
+│   └── validation-and-operations.md
+│
+└── LICENSE
+
+
+                 OPERATIONS TEAM
+                       |
+              Update Inventory
+              Select Servers
+              Set Exclusions
+              Click Upgrade
+                       |
+                       v
+              +----------------+
+              |    JENKINS     |
+              | Upgrade Job /  |
+              | Job Template   |
+              +-------+--------+
+                      |
+                      v
+              +----------------+
+              |    ANSIBLE     |
+              |  Orchestration |
+              +-------+--------+
+                      |
+              +-------+-------+
+              |               |
+              v               v
+        Pre-Upgrade       Python
+          Checks       Supporting Logic
+              |               |
+              +-------+-------+
+                      |
+                      v
+                 +---------+
+                 |  LEAPP  |
+                 +----+----+
+                      |
+                      v
+             RHEL Major Upgrade
+                      |
+                      v
+                   Reboot
+                      |
+                      v
+             Post-Upgrade Validation
+                      |
+              +-------+-------+
+              |               |
+              v               v
+           SUCCESS       ATTENTION
+                            |
+                            v
+                       Investigation
