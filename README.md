@@ -85,6 +85,22 @@ The exclusion mechanism allows the upgrade process to be adapted to the requirem
 * Validate the server after the upgrade.
 * Provide clear upgrade results to the operations team.
 
+## Architecture Highlights
+
+* Designed a repeatable approach for enterprise RHEL major-version upgrades.
+* Integrated Jenkins, Ansible, Python and Leapp into a controlled upgrade workflow.
+* Reduced manual effort by allowing the operations team to manage upgrades through a Jenkins job.
+* Supported server-list/inventory driven execution across multiple systems.
+* Added controlled package exclusions for components requiring special handling.
+* Included pre-upgrade checks and Leapp assessment before making OS changes.
+* Added automated reboot and post-upgrade validation.
+* Separated upgrade execution from validation to improve operational control.
+* Designed the workflow to support consistent execution, monitoring and troubleshooting.
+
+## Architecture Perspective
+
+This project represents a simplified, high-level enterprise approach to RHEL major-version upgrade automation. The focus is on architecture, automation workflow, operational control and validation rather than production-specific playbooks or proprietary implementation details.
+
 ## Scope
 
 This is a **high-level reference architecture** based on an enterprise RHEL upgrade automation approach.
